@@ -45,38 +45,40 @@ const und_gap = parseFloat(slider.value);
 
 // Create blocks on either side of the scene
 const blockGeometry = new THREE.BoxGeometry(block_length, block_height, block_width);
-const blockMaterial = new THREE.MeshStandardMaterial({ color: 0x0000ff });
+const blockMaterialBlue = new THREE.MeshStandardMaterial({ color: 0x0000ff });
+const blockMaterialRed = new THREE.MeshStandardMaterial({ color: 0xf31f00 });
 
 // Casset sup
 let casset_sup = [];
 let casset_sup_contour = [];
 for(let i = 0; i < 4*und_period_number; i++){
-    const block1 = new THREE.Mesh(blockGeometry, blockMaterial);
+    const block1 = new THREE.Mesh(blockGeometry, i%2 == 0 ? blockMaterialBlue : blockMaterialRed);
     block1.position.set(i*(block_length+d_between) - und_period*und_period_number/2 + (d_between+block_length)/2, (block_height + und_gap) / 2, 0);
+
     casset_sup.push(block1);
     scene.add(block1);
 
-    const blockEdges1 = new THREE.EdgesGeometry(blockGeometry);
-    const blockLine1 = new THREE.LineSegments(blockEdges1, new THREE.LineBasicMaterial({ color: 0xffffff }));
-    blockLine1.position.copy(block1.position);
-    casset_sup_contour.push(blockLine1);
-    scene.add(blockLine1);
+    // const blockEdges1 = new THREE.EdgesGeometry(blockGeometry);
+    // const blockLine1 = new THREE.LineSegments(blockEdges1, new THREE.LineBasicMaterial({ color: 0xffffff }));
+    // blockLine1.position.copy(block1.position);
+    // casset_sup_contour.push(blockLine1);
+    // scene.add(blockLine1);
 }
 
 // Casset inf
 let casset_inf = [];
 let casset_inf_contour = [];
 for(let i = 0; i < 4*und_period_number; i++){
-    const block1 = new THREE.Mesh(blockGeometry, blockMaterial);
+    const block1 = new THREE.Mesh(blockGeometry, i%2 == 0 ? blockMaterialRed : blockMaterialBlue);
     block1.position.set(i*(block_length+d_between) - und_period*und_period_number/2 + (d_between+block_length)/2, -(block_height + und_gap) / 2, 0);
     casset_inf.push(block1);
     scene.add(block1);
 
-    const blockEdges1 = new THREE.EdgesGeometry(blockGeometry);
-    const blockLine1 = new THREE.LineSegments(blockEdges1, new THREE.LineBasicMaterial({ color: 0xffffff }));
-    blockLine1.position.copy(block1.position);
-    casset_inf_contour.push(blockLine1)
-    scene.add(blockLine1);
+    // const blockEdges1 = new THREE.EdgesGeometry(blockGeometry);
+    // const blockLine1 = new THREE.LineSegments(blockEdges1, new THREE.LineBasicMaterial({ color: 0xffffff }));
+    // blockLine1.position.copy(block1.position);
+    // casset_inf_contour.push(blockLine1)
+    // scene.add(blockLine1);
 }
 
 // Gap control
@@ -109,19 +111,19 @@ period.addEventListener('input', () => {
         block.position.x = idx*(new_block_length+d_between + period.value/4)/2 - period.value*und_period_number/2 + (d_between+new_block_length)/2;
         block.scale.x = new_block_length/block_length
     })
-    casset_sup_contour.forEach( (contour, idx) => {
-        contour.position.x = idx*(new_block_length+d_between + period.value/4)/2 - period.value*und_period_number/2 + (d_between+new_block_length)/2;
-        contour.scale.x = new_block_length/block_length
-    })
+    // casset_sup_contour.forEach( (contour, idx) => {
+    //     contour.position.x = idx*(new_block_length+d_between + period.value/4)/2 - period.value*und_period_number/2 + (d_between+new_block_length)/2;
+    //     contour.scale.x = new_block_length/block_length
+    // })
 
     casset_inf.forEach( (block, idx) => {
         block.position.x = idx*(new_block_length+d_between + period.value/4)/2 - period.value*und_period_number/2 + (d_between+new_block_length)/2;
         block.scale.x = new_block_length/block_length
     })
-    casset_inf_contour.forEach( (contour, idx) => {
-        contour.position.x = idx*(new_block_length+d_between + period.value/4)/2 - period.value*und_period_number/2 + (d_between+new_block_length)/2;
-        contour.scale.x = new_block_length/block_length
-    })
+    // casset_inf_contour.forEach( (contour, idx) => {
+    //     contour.position.x = idx*(new_block_length+d_between + period.value/4)/2 - period.value*und_period_number/2 + (d_between+new_block_length)/2;
+    //     contour.scale.x = new_block_length/block_length
+    // })
 });
 
 
