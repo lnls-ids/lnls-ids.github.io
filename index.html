@@ -39,7 +39,12 @@
 		<output>18</output> mm
 		<br>
 	</div>
-	<script type="module" src="scripts/main.js"></script>
+	<script>
+        const script = document.createElement('script');
+        script.type = 'module';
+        script.src = 'scripts/main.js?v=' + Date.now();
+        document.body.appendChild(script)
+    </script>
 </body>
 
 </html>
