@@ -109,6 +109,10 @@ a.card:focus {
     border-left: 6px solid #0d62c4;
 }
 
+.card.delta {
+    border-left: 6px solid #929394;
+}
+
 h3 {
     margin-top: 22px;
     color: var(--muted);
