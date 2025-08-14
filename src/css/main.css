@@ -51,7 +51,8 @@ p.lead {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); */
+    grid-template-columns: 1fr 1fr;
     gap: 18px;
 }
 
@@ -97,11 +98,15 @@ a.card:focus {
 }
 
 .card.agu {
+    border-left: 6px solid #f97316;
+}
+
+.card.apu {
     border-left: 6px solid #06b6d4;
 }
 
 .card.apple {
-    border-left: 6px solid #f97316;
+    border-left: 6px solid #0d62c4;
 }
 
 h3 {
