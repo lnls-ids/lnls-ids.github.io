@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+canvas {
+    display: block;
+}
+
+#slider-container {
+    margin: 10px;
+}
+
+header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+header.site-title {
+    margin-bottom: 20px
+}
+
+header.site-title h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #0b1724
+}
+
+header a {
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 8px;
+    color: #10335a;
+    text-decoration: none
+}
