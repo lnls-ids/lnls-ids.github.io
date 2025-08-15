@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
     margin: 0;
     display: flex;
@@ -21,4 +21,61 @@ a {
     margin-top: 14px;
     color: #f97316;
     text-decoration: none
+} */
+
+body {
+    margin: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+}
+
+#slider-container {
+    padding-top: 50px;
+    margin-bottom: 10px;
+}
+
+header {
+    display: flex;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+header.site-title {
+    margin-bottom: 20px
+}
+
+header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #0b1724;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 100px;
+
+}
+
+header a {
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 8px;
+    color: #10335a;
+    text-decoration: none
+}
+
+.grid {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 18px;
 }
