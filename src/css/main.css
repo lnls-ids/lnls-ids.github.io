@@ -1,0 +1,142 @@
+:root {
+    --bg: #f5f7fb;
+    --card: #ffffff;
+    --accent: #0b78f6;
+    --muted: #6b7280
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    overflow-y: hidden;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #eef2ff 0%, var(--bg) 100%);
+    padding: 24px;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+header.site-title {
+    margin-bottom: 20px
+}
+
+header.site-title h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #0b1724
+}
+
+
+h2 {
+    margin: 6px 0 18px;
+    font-size: 1.2rem;
+    color: #111827
+}
+
+p.lead {
+    margin: 0 0 26px;
+    color: var(--muted);
+}
+
+.grid {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); */
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+a.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+    background: var(--card);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+    text-decoration: none;
+    color: inherit;
+    transition: transform .18s ease, box-shadow .18s ease, opacity .12s ease;
+    outline: none;
+    padding: 18px;
+}
+
+a.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
+}
+
+a.card:active {
+    transform: translateY(-2px);
+}
+
+.card .title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+}
+
+.card .subtitle {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 6px;
+}
+
+a.card:focus {
+    box-shadow: 0 0 0 4px rgba(11, 120, 246, 0.12);
+}
+
+.card.agu {
+    border-left: 6px solid #f97316;
+}
+
+.card.apu {
+    border-left: 6px solid #06b6d4;
+}
+
+.card.apple {
+    border-left: 6px solid #0d62c4;
+}
+
+.card.delta {
+    border-left: 6px solid #929394;
+}
+
+h3 {
+    margin-top: 22px;
+    color: var(--muted);
+    font-size: 0.85rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px
+}
+
+footer {
+    margin: 10px 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+}
+
+footer .copyright {
+    font-size: 0.82rem;
+    color: var(--muted);
+}
