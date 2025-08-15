@@ -257,17 +257,17 @@ rho.addEventListener('input', () => {
     let phi_value = parseFloat(phi.value)
 
     casset_up_left.forEach((block, idx) => {
-        block.position.x = casset_up_left_pos0[idx][0] - mode * rho_value;
+        block.position.x = casset_up_left_pos0[idx][0] - rho_value;
     })
     casset_up_left_contour.forEach((block, idx) => {
-        block.position.x = casset_up_left_pos0[idx][0] - mode * rho_value;
+        block.position.x = casset_up_left_pos0[idx][0] -  rho_value;
     })
 
     casset_up_right.forEach((block, idx) => {
-        block.position.x = casset_up_right_pos0[idx][0] - mode *(rho_value + phi_value);
+        block.position.x = casset_up_right_pos0[idx][0] - rho_value - phi_value;
     })
     casset_up_right_contour.forEach((block, idx) => {
-        block.position.x = casset_up_right_pos0[idx][0] -mode * (rho_value + phi_value);
+        block.position.x = casset_up_right_pos0[idx][0] - rho_value - phi_value;
     })
 
 });
@@ -278,17 +278,17 @@ phi.addEventListener('input', () => {
     let rho_value = parseFloat(rho.value)
 
     casset_up_right.forEach((block, idx) => {
-        block.position.x = casset_up_right_pos0[idx][0] - mode * (phi_value + rho_value);
+        block.position.x = casset_up_right_pos0[idx][0] - rho_value - phi_value;
     })
     casset_up_right_contour.forEach((block, idx) => {
-        block.position.x = casset_up_right_pos0[idx][0] - mode * (phi_value + rho_value);
+        block.position.x = casset_up_right_pos0[idx][0] - rho_value - phi_value;
     })
 
     casset_bottom_left.forEach((block, idx) => {
-        block.position.x = casset_bottom_left_pos0[idx][0] - phi_value;
+        block.position.x = casset_bottom_left_pos0[idx][0] - mode * phi_value;
     })
     casset_bottom_left_contour.forEach((block, idx) => {
-        block.position.x = casset_bottom_left_pos0[idx][0] - phi_value;
+        block.position.x = casset_bottom_left_pos0[idx][0] - mode * phi_value;
     })
 
 });
